@@ -71,7 +71,12 @@ export class DashboardComponent implements OnInit {
         //Sending Realtime order notification to all the users in chatroom
         this.addEntry(orderedBy, product);
         this.toastr.success('Order placed successfully');
-    }
+        
+        //reinitialising form
+        this.submitted = false;
+        this.createBadgeFormInit();
+
+      }
     addEntry(ordered_by, product) {
       // Parse any JSON previously stored in allEntries
       var entry = {
