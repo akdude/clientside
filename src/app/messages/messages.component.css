@@ -1,0 +1,36 @@
+.history {
+    width: 500px;
+    height: 200px;
+}
+.message {
+    height: 40px;
+}
+
+.pl-0 {
+    padding-left: 0px!important;
+}
+
+.message-div {
+    height: 200px;
+    width: 600px;
+    border-bottom: 4px solid lightgoldenrodyellow;
+    margin-bottom: 20px;
+    overflow-y:scroll;
+    border-radius: 3px;
+}
+
+.section {
+    background: lightgoldenrodyellow;
+}
+.brown {
+    color: brown;
+}
+
+.gray {
+    color: gray;
+}
+
+.mt {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

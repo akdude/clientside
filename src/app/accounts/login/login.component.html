@@ -1,0 +1,27 @@
+<div class="row mt-50">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="panel-title text-center mt-20">
+                    <h5>Hello!!</h5>
+                </div>
+            </div>
+            <div class="panel-body">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="example">Please Enter Your Name</label>
+                        <input type="name" formControlName="name" class="form-control" placeholder="Virat Kohli" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                            <div *ngIf="f.name.errors.required" class="text text-danger">Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

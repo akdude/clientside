@@ -1,0 +1,102 @@
+<div class="container-fluid">
+    <div class="row page-title-div">
+        <div class="col-md-1">
+
+        </div>
+        <div class="col-sm-9">
+            <h2 class="title">Shopping Cart</h2>
+        </div>
+        <div class="col-sm-2">
+            <h6>Welcome {{username}} !!</h6>
+        </div>
+        <!-- /.col-sm-6 -->
+    </div>
+    
+</div>
+<!-- /.container-fluid -->
+<section class="section pt-10">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-1">
+
+            </div>
+            <div class="col-md-6">
+                <form [formGroup]="badgeForm" (ngSubmit)="onSubmit()">
+                           
+
+                    <div class="form-group" [ngClass]="{ 'has-error': submitted && f.name.errors }">
+                        <label for="name" class="control-label">Name</label>
+                        <div class="">
+                            <input type="text" formControlName="name" class="form-control" placeholder="Name"
+                                class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                            <span *ngIf="submitted && f.name.errors" class="help-block">This field is
+                                required.</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" [ngClass]="{ 'has-error': submitted && f.phone.errors }">
+                        <label for="phone" class="control-label">Phone Number</label>
+                        <div class="">
+                            <input type="text" formControlName="phone" class="form-control" placeholder="Phone"
+                                class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                                <span *ngIf="submitted && f.phone.errors" class="help-block">
+                                    <span *ngIf="f.phone.errors.pattern; else loop">
+                                        Mobile number not valid.
+                                    </span> 
+                                </span>
+                                <ng-template #loop>
+                                    This field is required.
+                                </ng-template>
+                            </div>
+                    </div>
+
+
+                    <div class="form-group" [ngClass]="{ 'has-error': submitted && f.type.errors }">
+                        <label for="type" class="control-label">Select a Product</label>
+                        <div class="">
+                            <select formControlName="type" class="form-control">
+                                <option>Mobile</option>
+                                <option>Laptop</option>
+                                <option>Speaker</option>
+                                <option>Men'sDenim</option>
+                            </select>
+
+                            <span *ngIf="submitted && f.type.errors" class="help-block">This field is
+                                required.</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" [ngClass]="{ 'has-error': submitted && f.date.errors }">
+                        <label for="date" class="control-label">Date of delivery</label>
+                        <div class="">
+                            <input type="date" formControlName="date" class="form-control" placeholder="date"
+                                class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.date.errors }" />
+                            <span *ngIf="submitted && f.date.errors" class="help-block">This field is
+                                required.</span>
+                                <span *ngIf="invalidDate" class="help-block error">select different date.</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button mat-button type="submit" class="btn btn-primary">
+                            Checkout
+                        </button>
+                        <button mat-button type="button" (click)="openDialog()" class="btn btn-success ml-20">
+                            Enter Chatroom
+                        </button>
+                    </div>
+                </form>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-md-6 -->
+            <div class="col-md-5">
+
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.section -->

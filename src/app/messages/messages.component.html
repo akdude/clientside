@@ -1,0 +1,66 @@
+<div class="text-right">
+    <button class="btn btn-danger" (click)="leave()">
+        Leave
+    </button>
+</div>
+    <section class="section">
+    <h3>Chat Room / Order Summary</h3>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="panel">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12 message-div">
+                                <div *ngIf="messages.length === 0">
+                                    Messages/Orders will be displayed here...
+                                </div>
+                                <div *ngFor="let message of messages">
+                                    <b *ngIf="!message.user" class="brown">
+                                        {{ message.text }}
+                                    </b>
+                                    <div *ngIf="message.user && (username === message.user);else loop">
+                                        <div class="row mt">
+                                            <div class="col-md-10">
+                                                <b>You :</b> {{ message.text }} 
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="text-right gray">
+                                                    {{message.time}}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <ng-template #loop>
+                                        <div *ngIf="message.user">
+                                            <div class="row mt">
+                                                <div class="col-md-10">
+                                                    <b>{{message.user}} :</b> {{ message.text }} 
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <span class="text-right gray">
+                                                        {{message.time}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </ng-template>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1">
+                                
+                            </div>
+                            <div class="col-md-9">
+                                <textarea class="form-control message" id="message_val" matInput placeholder="Type your message here..."></textarea>
+                            </div>
+                            <div class="col-md-2 pl-0">
+                                <button class="btn btn-primary message" (click)="sendMessage()"><i class="fa fa-send"></i></button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <!-- /.col-md-8 col-md-offset-2 -->
+        </div>
+    </div>
+</section>
