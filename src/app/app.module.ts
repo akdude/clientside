@@ -34,8 +34,6 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { routes } from './app.routes';
 import { LoginComponent } from './accounts/login/login.component';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
-import { DragNDropComponent } from './components/drag-n-drop/drag-n-drop.component';
-import { PaginationComponent } from './components/pagination/pagination.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -49,8 +47,6 @@ import { MatButtonModule } from '@angular/material/button';
 		AppComponent,
 		DashboardComponent,
 		LoginComponent,
-		DragNDropComponent,
-		PaginationComponent,
 		MessagesComponent,
 	
 	],
