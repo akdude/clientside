@@ -10,7 +10,6 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
-import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 import { CustomFormsModule } from 'ng2-validation';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
@@ -27,7 +26,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 // Import Services
 // import { SortablejsModule } from 'ngx-sortablejs'; 
-import { SweetAlert2Module } from '@toverux/ngsweetalert2';
 import {MatDialogModule} from '@angular/material/dialog';
 
 import { TabsModule } from 'ngx-bootstrap/tabs';
@@ -44,8 +42,6 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { MessagesComponent } from './messages/messages.component';
 import { PusherService } from './pusher.service';
 import { MessageService } from './message.service';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
