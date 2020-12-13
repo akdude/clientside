@@ -18,12 +18,14 @@ export class MessageService {
     this.initialize();
   }
 
-  initialize() {
+  //Messages are automatically pushed into messageStream when received
+  initialize() { 
     this.pusherService.messagesChannel.bind('client-new-message', (message) => {
       this.emitNewMessage(message);
     });
   }
-
+  
+  // sending message 
   send(message: Message) {
     this.pusherService.messagesChannel.trigger('client-new-message', message);
     this.emitNewMessage(message);

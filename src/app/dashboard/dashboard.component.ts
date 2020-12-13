@@ -67,6 +67,8 @@ export class DashboardComponent implements OnInit {
         let product = this.badgeForm.value['type'];
         let message = orderedBy+' have placed an order for a '+product+' on '+new Date().toLocaleString();
         this.messageService.send({text: message, user: '', time:''});
+
+        //Sending Realtime order notification to all the users in chatroom
         this.addEntry(orderedBy, product);
         this.toastr.success('Order placed successfully');
     }

@@ -11,14 +11,12 @@ export class PusherService {
   constructor() {
     this.initializePusher();
   }
-
+  // Initialising pusher service (A simple websocket service )
   initializePusher(): void {
     this.pusher = new Pusher(environment.pusher.key,{
       cluster: "ap2",
-      authEndpoint: 'http://localhost:3000/pusher/auth',
+      authEndpoint: environment.serverUrl,
     });
     this.messagesChannel = this.pusher.subscribe('private-all-messages');
-    console.log(this.pusher);
-    console.log(this.messagesChannel);
   }
 }

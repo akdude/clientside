@@ -45,7 +45,6 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-    console.log(this.loginForm.value['name']);
     sessionStorage.setItem("name", this.loginForm.value['name']);
     this.router.navigate(['/dashboard']);
   }

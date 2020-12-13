@@ -7,5 +7,6 @@ export const environment = {
   production: false,
   pusher: {
     key: '32a680012e60b375e014',
-  }
+  },
+  serverUrl : 'http://localhost:3000/pusher/auth'
 };

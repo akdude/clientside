@@ -37,7 +37,8 @@ export class MessagesComponent implements OnInit {
     });
     this.messageService.messagesStream
       .subscribe(this.newMessageEventHandler.bind(this));
-    
+      
+      // Orders have been taken from localstorage and displayed in dialog box. 
       this.messages = [];
       let orders = JSON.parse(localStorage.getItem("allEntries"));
       if (orders) {
@@ -64,12 +65,12 @@ export class MessagesComponent implements OnInit {
     this.messages.push(event);
   }
   sendMessage() {
-    var messagevalue = (document.getElementById('message_val') as HTMLButtonElement).value;
+    var messagevalue = (document.getElementById('messageVal') as HTMLButtonElement).value;
     if (!messagevalue) {
       return;
     }
     this.messageService.send({text: messagevalue, user: this.username, time:this.currentTime()});
-    (document.getElementById('message_val') as HTMLButtonElement). value = '';
+    (document.getElementById('messageVal') as HTMLButtonElement). value = '';
   }
   leave() {
     this.dialog.closeAll();
